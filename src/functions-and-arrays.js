@@ -29,9 +29,9 @@ function findLongestWord(someArray) {
   let palabraLarga = '';
   
   for(let i = 0; i < someArray.length; i++){ 
-    longPalabra = someArray[i].length;
-    if (longPalabra >= palabraLarga)
-      {palabraLarga = someArray[i]}
+    longPalabra = someArray[i]
+    if (longPalabra.length >= palabraLarga.length)
+      {palabraLarga = longPalabra}
   } 
   if (someArray.length == 0) 
   {return null}
@@ -205,8 +205,21 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arrayWordsUn) {
+  const arrUnif = [];
 
+  for (let i = 0; i < arrayWordsUn.length; i++)
+  { 
+  if (arrUnif.includes(arrayWordsUn[i])) {}
+  else {arrUnif.push(arrayWordsUn[i])}
+  }
+  if (arrayWordsUn.length == 0)
+  {return null}
+  else {return arrUnif}
+}
+
+let printUnifArray = uniquifyArray(wordsUnique);
+console.log(printUnifArray);
 
 
 // Iteration #6: Find elements
